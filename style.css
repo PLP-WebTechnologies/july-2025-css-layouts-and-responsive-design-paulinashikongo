@@ -1,0 +1,183 @@
+/* Base Styles & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background: #f5f5f5;
+}
+
+/* Header with Flexbox navigation */
+header {
+  background: #007acc;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  flex: 1 1 200px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #005f99;
+  border-radius: 4px;
+}
+
+/* Main grid layout */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Content and cards */
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+.cards {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  flex: 1 1 150px; /* flexible width */
+  min-width: 150px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: #222;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  header {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  /* Stack header items vertically */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Stack nav links vertically */
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Stack main content and sidebar */
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+/* Quote Section */
+.quote-section {
+  grid-column: 1 / -1; /* Span full width of the grid */
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.quote-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.quote-section blockquote {
+  font-style: italic;
+  color: #333;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.quote-section footer {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #777;
+}
